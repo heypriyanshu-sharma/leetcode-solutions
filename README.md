@@ -38,19 +38,24 @@ File: [`brute_force.cpp`](./arrays/best-time-to-buy-and-sell-stock/brute_force.c
 
 I used two loops to check every possible buying and selling pair. For each pair, I calculated the profit and kept track of the maximum profit.
 
-The approach makes sense, but LeetCode gave me a Time Limit Exceeded (TLE) error on the larger test cases.
+The approach made sense, but LeetCode gave me a Time Limit Exceeded (TLE) error on the larger test cases.
 
 - Time: `O(n²)`
 - Extra space: `O(1)`
 
-I'll try to optimize this approach next.
+**Optimized (C++)**
 
-## What I'm Learning
+File: [`optimizedsol.cpp`](./arrays/best-time-to-buy-and-sell-stock/optimizedsol.cpp)
 
-- How nested loops can be used to solve problems using brute force.
-- How dictionaries can help avoid repeatedly searching through an array.
-- How to improve an algorithm by using extra memory or a better approach.
-- How to compare time and space complexity.
-- Why a solution that works on small inputs might be too slow for large ones.
+After getting TLE with brute force, I tried solving it using a single loop. I keep track of the lowest price I've seen so far and calculate the profit at each price.
 
-I'm still learning, so I'll keep adding problems as I solve them and improve my problem-solving skills.
+This way, I don't need to check every possible buying and selling pair.
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+## What I Learned
+
+The brute-force approach helped me understand the problem, but it was too slow for large inputs. The optimized approach works by remembering the lowest price so far instead of repeatedly checking earlier days.
+
+I also learned that we can improve time complexity without needing extra data structures.
