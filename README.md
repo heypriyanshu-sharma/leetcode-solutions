@@ -54,8 +54,33 @@ This way, I don't need to check every possible buying and selling pair.
 - Time: `O(n)`
 - Extra space: `O(1)`
 
+### 3. Contains Duplicate — LeetCode #217
+
+For this problem, I tried using sorting first and then improved the approach using a set in Python.
+
+**Brute Force (C++)**
+
+File: [`sorting.cpp`](./arrays/contains-duplicate/sorting.cpp)
+
+I sorted the array and used a loop to check neighboring elements. If two adjacent elements were equal, it meant the array contained a duplicate.
+
+- Time: `O(n log n)`
+
+**Optimized (Python)**
+
+File: [`optimizedsol.py`](./arrays/contains-duplicate/optimizedsol.py)
+
+I used a set to keep track of the elements I'd already visited. If a number was already in the set, I returned `True`. Otherwise, I added it and continued checking.
+
+This avoids comparing every pair of elements.
+
+- Average time: `O(n)`
+- Extra space: `O(n)`
+
 ## What I Learned
 
-The brute-force approach helped me understand the problem, but it was too slow for large inputs. The optimized approach works by remembering the lowest price so far instead of repeatedly checking earlier days.
+The brute-force approach helped me understand the problems, but it can be too slow for large inputs. I've been learning to improve my solutions by avoiding repeated comparisons and keeping track of useful information.
 
-I also learned that we can improve time complexity without needing extra data structures.
+With Two Sum, I used a dictionary to find the required number faster. With Best Time to Buy and Sell Stock, I kept track of the lowest price so far. With Contains Duplicate, I learned how sorting and sets can help detect duplicates more efficiently.
+
+I'm trying to understand why each approach works instead of just memorizing solutions.
