@@ -77,10 +77,36 @@ This avoids comparing every pair of elements.
 - Average time: `O(n)`
 - Extra space: `O(n)`
 
+### 4. Maximum Subarray — LeetCode #53
+
+I started with a brute-force approach and then improved it using Kadane's algorithm.
+
+**Brute Force (C++)**
+
+File: [`brute_force.cpp`](./arrays/maximum-subarray/brute_force.cpp)
+
+I used two loops to check every possible contiguous subarray. Instead of recalculating each sum from scratch, I kept a running sum as I extended the subarray.
+
+The logic worked, but LeetCode gave me a Time Limit Exceeded (TLE) error on larger test cases.
+
+- Time: `O(n²)`
+- Extra space: `O(1)`
+
+**Optimized (C++)**
+
+File: [`optimizedsol.cpp`](./arrays/maximum-subarray/optimizedsol.cpp)
+
+I used Kadane's algorithm to keep track of the current subarray sum and the maximum sum found so far. At each element, I decide whether to extend the current subarray or start a new one.
+
+This avoids checking every possible subarray.
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
 ## What I Learned
 
-The brute-force approach helped me understand the problems, but it can be too slow for large inputs. I've been learning to improve my solutions by avoiding repeated comparisons and keeping track of useful information.
+The brute-force approach helped me understand the problems, but it was too slow for large inputs. The optimized approaches work by remembering useful information instead of repeatedly checking every possibility.
 
-With Two Sum, I used a dictionary to find the required number faster. With Best Time to Buy and Sell Stock, I kept track of the lowest price so far. With Contains Duplicate, I learned how sorting and sets can help detect duplicates more efficiently.
+With Two Sum, I used a dictionary to find the required number faster. With Best Time to Buy and Sell Stock, I kept track of the lowest price so far. With Contains Duplicate, I learned how sorting and sets can help detect duplicates more efficiently. With Maximum Subarray, I learned how Kadane's algorithm can find the maximum sum without checking every possible subarray.
 
 I'm trying to understand why each approach works instead of just memorizing solutions.
