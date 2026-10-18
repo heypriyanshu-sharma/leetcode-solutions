@@ -103,10 +103,38 @@ This avoids checking every possible subarray.
 - Time: `O(n)`
 - Extra space: `O(1)`
 
+
+### 5. Product of Array Except Self — LeetCode #238
+
+For this problem, I started with brute force and then optimized it using prefix and suffix products.
+
+**Brute Force (C++)**
+
+File: [`brute_force.cpp`](./arrays/product-of-array-except-self/brute_force.cpp)
+
+I used two loops to multiply every element except the one at the current index. The logic was straightforward, but it gave me a Time Limit Exceeded (TLE) error on larger test cases.
+
+- Time: `O(n²)`
+- Extra space: `O(1)`
+
+**Optimized (Python)**
+
+File: [`optimizedsol.py`](./arrays/product-of-array-except-self/optimizedsol.py)
+
+I used prefix products to keep track of the product of elements to the left of each index. Then I traversed the array from right to left, using a running suffix product to calculate the final answer.
+
+This avoids repeatedly multiplying the same elements and solves the problem without using division.
+
+- Time: `O(n)`
+- Extra space: `O(1)` (excluding the output array)
+
+
 ## What I Learned
 
 The brute-force approach helped me understand the problems, but it was too slow for large inputs. The optimized approaches work by remembering useful information instead of repeatedly checking every possibility.
 
 With Two Sum, I used a dictionary to find the required number faster. With Best Time to Buy and Sell Stock, I kept track of the lowest price so far. With Contains Duplicate, I learned how sorting and sets can help detect duplicates more efficiently. With Maximum Subarray, I learned how Kadane's algorithm can find the maximum sum without checking every possible subarray.
+
+With Product of Array Except Self, I learned how prefix and suffix products can be combined to avoid repeated calculations and bring a nested-loop solution down to linear time.
 
 I'm trying to understand why each approach works instead of just memorizing solutions.
