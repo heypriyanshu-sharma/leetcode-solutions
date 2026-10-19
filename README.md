@@ -128,6 +128,32 @@ This avoids repeatedly multiplying the same elements and solves the problem with
 - Time: `O(n)`
 - Extra space: `O(1)` (excluding the output array)
 
+### 6. Majority Element — LeetCode #169
+
+For this problem, I started with a brute-force approach and then optimized it using the Boyer-Moore Voting Algorithm.
+
+**Brute Force (C++)**
+
+File: [`brute_force.cpp`](./arrays/majority-element/brute_force.cpp)
+
+I used two loops to count how many times each element appeared in the array. If an element appeared more than half the length of the array, I returned it.
+
+The logic worked, but LeetCode gave me a Time Limit Exceeded (TLE) error on larger test cases.
+
+- Time: `O(n²)`
+- Extra space: `O(1)`
+
+**Optimized (Python)**
+
+File: [`optimizedsol.py`](./arrays/majority-element/optimizedsol.py)
+
+I used the Boyer-Moore Voting Algorithm to find the majority element in a single pass. I maintained a candidate and a counter, increasing the counter when the current number matched the candidate and decreasing it when they were different.
+
+When the counter reached zero, I selected a new candidate. Since the problem guarantees that a majority element exists, the final candidate is the answer.
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
 
 ## What I Learned
 
@@ -136,5 +162,9 @@ The brute-force approach helped me understand the problems, but it was too slow 
 With Two Sum, I used a dictionary to find the required number faster. With Best Time to Buy and Sell Stock, I kept track of the lowest price so far. With Contains Duplicate, I learned how sorting and sets can help detect duplicates more efficiently. With Maximum Subarray, I learned how Kadane's algorithm can find the maximum sum without checking every possible subarray.
 
 With Product of Array Except Self, I learned how prefix and suffix products can be combined to avoid repeated calculations and bring a nested-loop solution down to linear time.
+
+I'm trying to understand why each approach works instead of just memorizing solutions.
+
+With Majority Element, I learned how the Boyer-Moore Voting Algorithm uses a candidate and a counter to find the majority element in linear time. My brute-force solution got TLE on larger test cases, which helped me understand why choosing an efficient algorithm matters even when the logic is correct.
 
 I'm trying to understand why each approach works instead of just memorizing solutions.
