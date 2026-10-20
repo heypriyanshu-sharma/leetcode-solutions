@@ -155,6 +155,20 @@ When the counter reached zero, I selected a new candidate. Since the problem gua
 - Extra space: `O(1)`
 
 
+### 7. Maximum Average Subarray I — LeetCode #643
+
+**Brute Force — C++**
+- Checks every contiguous subarray of size `k` and calculates its average.
+- Time Complexity: `O(n × k)`
+- Auxiliary Space: `O(1)`
+
+**Optimized — Python**
+- Uses a fixed-size sliding window to track the sum of `k` consecutive elements.
+- Instead of recalculating the entire sum, subtracts the outgoing element and adds the incoming element.
+- Time Complexity: `O(n)`
+- Auxiliary Space: `O(1)` for the sliding-window algorithm, excluding the temporary initialization slice.
+
+
 ## What I Learned
 
 The brute-force approach helped me understand the problems, but it was too slow for large inputs. The optimized approaches work by remembering useful information instead of repeatedly checking every possibility.
@@ -168,3 +182,6 @@ I'm trying to understand why each approach works instead of just memorizing solu
 With Majority Element, I learned how the Boyer-Moore Voting Algorithm uses a candidate and a counter to find the majority element in linear time. My brute-force solution got TLE on larger test cases, which helped me understand why choosing an efficient algorithm matters even when the logic is correct.
 
 I'm trying to understand why each approach works instead of just memorizing solutions.
+
+I also learned how a fixed-size sliding window can optimize problems involving consecutive elements. Instead of recalculating the sum for every window, we can update it by removing the element that leaves and adding the new element that enters. This reduces the time complexity from O(n × k) to O(n).
+
