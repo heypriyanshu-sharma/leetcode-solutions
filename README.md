@@ -168,6 +168,10 @@ When the counter reached zero, I selected a new candidate. Since the problem gua
 - Time Complexity: `O(n)`
 - Auxiliary Space: `O(1)` for the sliding-window algorithm, excluding the temporary initialization slice.
 
+### 8. Minimum Size Subarray Sum (#209)
+
+- **Brute Force (C++):** Checked subarrays using nested loops to find the minimum length. O(n²) time.
+- **Optimized (Python):** Used a variable-size sliding window to find the shortest valid subarray in O(n) time.
 
 ## What I Learned
 
