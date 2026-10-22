@@ -173,6 +173,11 @@ When the counter reached zero, I selected a new candidate. Since the problem gua
 - **Brute Force (C++):** Checked subarrays using nested loops to find the minimum length. O(n²) time.
 - **Optimized (Python):** Used a variable-size sliding window to find the shortest valid subarray in O(n) time.
 
+### 9. Longest Substring Without Repeating Characters (#3)
+
+- **Brute Force (C++):** Used nested loops and a set to find the longest substring without repeating characters. O(n² log n) time.
+- **Optimized (Python):** Used a sliding window and a set to solve the problem in O(n) time.
+
 ## What I Learned
 
 The brute-force approach helped me understand the problems, but it was too slow for large inputs. The optimized approaches work by remembering useful information instead of repeatedly checking every possibility.
