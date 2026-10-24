@@ -178,6 +178,11 @@ When the counter reached zero, I selected a new candidate. Since the problem gua
 - **Brute Force (C++):** Used nested loops and a set to find the longest substring without repeating characters. O(n² log n) time.
 - **Optimized (Python):** Used a sliding window and a set to solve the problem in O(n) time.
 
+### 10. 3Sum (#15)
+
+- **Brute Force (C++):** Used three nested loops to find triplets that sum to zero and avoid duplicate triplets.
+- **Optimized (Python):** Used sorting and two pointers to find unique triplets in O(n²) time.
+
 ## What I Learned
 
 The brute-force approach helped me understand the problems, but it was too slow for large inputs. The optimized approaches work by remembering useful information instead of repeatedly checking every possibility.
