@@ -183,6 +183,11 @@ When the counter reached zero, I selected a new candidate. Since the problem gua
 - **Brute Force (C++):** Used three nested loops to find triplets that sum to zero and avoid duplicate triplets.
 - **Optimized (Python):** Used sorting and two pointers to find unique triplets in O(n²) time.
 
+### 11. Container With Most Water (#11)
+
+- **Brute Force (C++):** Checked every pair of lines to find the maximum water container area. O(n²) time.
+- **Optimized (Python):** Used two pointers to find the maximum area in O(n) time.
+
 ## What I Learned
 
 The brute-force approach helped me understand the problems, but it was too slow for large inputs. The optimized approaches work by remembering useful information instead of repeatedly checking every possibility.
